@@ -1,2 +1,6 @@
 ^bibby\.Rproj$
 ^\.Rproj\.user$
+^LICENSE\.md$
+^data-raw$
+.Renviron
+^\.github$
