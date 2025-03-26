@@ -2,11 +2,10 @@
 #'
 #' @param path_to_bib file path to the bib to create or update
 #' @param v_bibtex_strings bibtex strings to add
+#' @param output_type the type of output to return. Default is "markdown_short"
 #'
 #' @return a vector of the bibtex tags (one per string)
 #' @export
-#'
-#' @examples
 update_bib_file_from_vector <- function(
     path_to_bib,
     v_bibtex_strings,

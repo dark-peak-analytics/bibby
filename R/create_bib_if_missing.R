@@ -6,7 +6,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' create_bib_if_missing("refs.bib")
+#' }
 create_bib_if_missing <- function(path){
   # Check if the file exists in the path
   if (!file.exists(path)) {

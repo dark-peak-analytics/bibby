@@ -3,7 +3,7 @@
 #' Exists after the first braket and before the first comma.
 #'
 #' @param bibtex_string the bibtex string to use
-#' @param output type of tag to output (e.g. markdown short ref e.g. [1], or long reference or just the tag string)
+#' @param output type of tag to output (e.g. markdown short ref or long reference or just the tag string)
 #'
 #' @return a bibtex tag, or pre-formatted for markdown
 #' @export

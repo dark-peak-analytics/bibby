@@ -6,8 +6,10 @@ test_that("append_bibtex_string works as intended", {
   # basic check to ensure the length of the bibtex strings is 3 (two refs and a blank line)
   v_bibtex_strings |>  expect_length(3)
 
+  result <- v_bibtex_strings[2] == " "
+
   # check the second line is blank
-  expect_true(v_bibtex_strings[2] == " ")
+  expect_true(object = result)
 
 })
 

@@ -41,9 +41,6 @@ append_bibtex_string <- function(bibtex_string, existing_content){
 #'
 #' @return a vector of bibtex content
 #' @export
-#'
-#' @examples
-#'
 append_bibtex_string_vec <- function(v_bibtex_strings, existing_content) {
   for (ref in v_bibtex_strings) {
     existing_content <- append_bibtex_string(

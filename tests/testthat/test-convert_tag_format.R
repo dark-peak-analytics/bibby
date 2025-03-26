@@ -1,4 +1,4 @@
-test_that("multiplication works", {
+test_that("convert_tag_format works", {
   convert_tag_format(x = "@smith2020making", to = "tag") |>
     expect_equal("smith2020making")
   convert_tag_format(x = "@smith2020making", to = "markdown_short") |>
