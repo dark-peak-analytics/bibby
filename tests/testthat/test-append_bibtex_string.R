@@ -4,7 +4,7 @@ test_that("append_bibtex_string works as intended", {
                        existing_content = v_example_refs[1])
 
   # basic check to ensure the length of the bibtex strings is 3 (two refs and a blank line)
-  v_bibtex_strings |>  expect_length(3)
+  expect_length(object = v_bibtex_strings, n = 3)
 
   result <- v_bibtex_strings[2] == " "
 
@@ -20,10 +20,10 @@ test_that("append_bibtex_string_vec works as intended", {
                                            existing_content = v_example_refs[1])
 
   # basic check to ensure the length of the bibtex strings is 3 (two refs and a blank line)
-  v_bibtex_strings |>  expect_length(5 + 4)
+  expect_length(object = v_bibtex_strings, n = 5 + 4)
 
   # check the second line is blank
-  expect_true(all(v_bibtex_strings[(1:4)*2] == " "))
+  expect_true(object = all(v_bibtex_strings[(1:4)*2] == " "))
 
 })
 

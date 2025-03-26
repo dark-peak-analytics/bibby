@@ -9,8 +9,8 @@ Authors@R: c(
     person("Dark Peak Analytics Ltd", role = c("cph", "fnd"))
   )
 Description: The 'bibby' package provides functions to help take input tables that 
-contain BibTeX entries and convert them into a format that can be used in R, RMarkdown & Quarto
-so that automated reports can be generated with the references included.
+              contain BibTeX entries and convert them into a format that can be used in R, RMarkdown & Quarto
+              so that automated reports can be generated with the references included.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
