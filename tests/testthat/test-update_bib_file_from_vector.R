@@ -57,4 +57,7 @@ test_that("Test writing to file works", {
     }
   ) |> unlist() |> all() |> expect_true()
 
+  # unlink the temporary directory
+  on.exit(unlink(temp_dir, recursive = TRUE))
+
 })
