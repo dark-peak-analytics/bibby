@@ -1,6 +1,6 @@
 #' Convert between different tag formats
 #'
-#' @param x a character vector of tags
+#' @param x a single string containing a tag, markdown_long or markdown_short tag
 #' @param to the format to convert to
 #'
 #' @return a character vector of the tags in the new format
@@ -8,6 +8,8 @@
 #'
 #' @examples
 #' convert_tag_format(x = "@smith2020making", to = "tag")
+#' convert_tag_format(x = "@smith2020making", to = "markdown_short")
+#' convert_tag_format(x = "smith2020making", to = "markdown_long")
 #'
 convert_tag_format <- function(x,
                                to = c("markdown_long", "markdown_short" , "tag")){

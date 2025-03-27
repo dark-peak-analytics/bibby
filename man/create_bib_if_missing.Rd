@@ -4,10 +4,12 @@
 \alias{create_bib_if_missing}
 \title{Create empty bib file if it is missing}
 \usage{
-create_bib_if_missing(path)
+create_bib_if_missing(path = "bibby_refs.bib", verbose = FALSE)
 }
 \arguments{
-\item{path}{path to file. Must end with .bib}
+\item{path}{path to proposed new file name. Must end with .bib}
+
+\item{verbose}{logical for whether to print messages. Default is FALSE}
 }
 \value{
 empty
@@ -16,7 +18,7 @@ empty
 Create empty bib file if it is missing
 }
 \examples{
-\dontrun{
-create_bib_if_missing("refs.bib")
+\donttest{
+create_bib_if_missing()
 }
 }

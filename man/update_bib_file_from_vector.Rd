@@ -5,21 +5,36 @@
 \title{Update or create a bib file with a vector of bibtex strings}
 \usage{
 update_bib_file_from_vector(
-  path_to_bib,
-  v_bibtex_strings,
-  output_type = "markdown_short"
+  path,
+  v_bibtex_entries,
+  output_type = "markdown_short",
+  verbose = FALSE
 )
 }
 \arguments{
-\item{path_to_bib}{file path to the bib to create or update}
+\item{path}{file path to the bib to create or update}
 
-\item{v_bibtex_strings}{bibtex strings to add}
+\item{v_bibtex_entries}{bibtex strings to add}
 
 \item{output_type}{the type of output to return. Default is "markdown_short"}
+
+\item{verbose}{logical for whether to print messages. Default is FALSE}
 }
 \value{
 a vector of the bibtex tags (one per string)
 }
 \description{
 Update or create a bib file with a vector of bibtex strings
+}
+\examples{
+
+\donttest{
+update_bib_file_from_vector(
+path = "bibby_refs.bib",
+v_bibtex_entries = v_example_refs,
+verbose = TRUE
+)
+}
+
+
 }

@@ -7,7 +7,7 @@
 convert_tag_format(x, to = c("markdown_long", "markdown_short", "tag"))
 }
 \arguments{
-\item{x}{a character vector of tags}
+\item{x}{a single string containing a tag, markdown_long or markdown_short tag}
 
 \item{to}{the format to convert to}
 }
@@ -19,5 +19,7 @@ Convert between different tag formats
 }
 \examples{
 convert_tag_format(x = "@smith2020making", to = "tag")
+convert_tag_format(x = "@smith2020making", to = "markdown_short")
+convert_tag_format(x = "smith2020making", to = "markdown_long")
 
 }

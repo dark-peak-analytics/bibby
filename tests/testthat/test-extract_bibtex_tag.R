@@ -1,40 +1,22 @@
 test_that("extract_bibtex_tag", {
 
-  bib_tag <- extract_bibtex_tag(bibtex_string = "@article{smith2020making,
-  title={Making health economic models Shiny: A tutorial},
-  author={Smith, Robert and Schneider, Paul},
-  journal={Wellcome open research},
-  volume={5},
-  pages={69},
-  year={2020}
-  }", output = "markdown_long")
+  bib_tag <- extract_bibtex_tag(bibtex_entry = v_example_refs[1],
+                                output = "markdown_long")
 
   expect_equal(object = bib_tag, expected = "@smith2020making")
 
 
   #========================================================================#
 
-  bib_tag <- extract_bibtex_tag(bibtex_string = "@article{smith2020making,
-  title={Making health economic models Shiny: A tutorial},
-  author={Smith, Robert and Schneider, Paul},
-  journal={Wellcome open research},
-  volume={5},
-  pages={69},
-  year={2020}
-  }", output = "markdown_short")
+  bib_tag <- extract_bibtex_tag(bibtex_entry = v_example_refs[1],
+                                output = "markdown_short")
 
   expect_equal(object = bib_tag, expected = "[@smith2020making]")
 
   #========================================================================#
 
-  bib_tag <- extract_bibtex_tag(bibtex_string = "@article{smith2020making,
-  title={Making health economic models Shiny: A tutorial},
-  author={Smith, Robert and Schneider, Paul},
-  journal={Wellcome open research},
-  volume={5},
-  pages={69},
-  year={2020}
-  }", output = "tag")
+  bib_tag <- extract_bibtex_tag(bibtex_entry = v_example_refs[1],
+                                output = "tag")
 
   expect_equal(object = bib_tag, expected = "smith2020making")
 
