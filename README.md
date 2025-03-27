@@ -30,6 +30,44 @@ devtools::install_github("dark-peak-analytics/bibby")
 library(bibby)
 ```
 
+## Use
+
+Hopefully simple to use. Just specify the bibtex entry and the output type required.
+For example...
+
+``` r
+
+extract_bibtex_tag(
+  bibtex_entry =  "@article{smith2020making,
+                            title={Making health economic models Shiny: A tutorial},
+                            author={Smith, Robert and Schneider, Paul},
+                            journal={Wellcome open research},
+                            volume={5},
+                            pages={69},
+                            year={2020}}",
+  output = "markdown_long")
+
+```
+
+If you have a list of bibtex entries, you can then use the `update_bib_file_from_vector`
+function to update a .bib file with the new entries. For example the code below
+will update the file `bibby_refs.bib` with the new entries (creating it if the file
+doesn't exist). The `verbose` argument will print the new entries to the console.
+The function also returns the bibtex tags of all entries for use in other functions.
+
+
+``` r
+
+update_bib_file_from_vector(path = "bibby_refs.bib",
+                            v_bibtex_entries = v_example_refs,
+                            verbose = TRUE, 
+                            output_type = "markdown_short"
+                            )
+                            
+```
+
+
+
 
 ## Get in contact
 

@@ -6,10 +6,11 @@ Authors@R: c(
            comment = c(ORCID = "0000-0003-0245-3217")),
     person("Wael", "Mohammed", , "wmohammed@darkpeakanalytics.com", role = c("aut"),
            comment = c(ORCID = "0000-0003-0370-4903")),
+    person("Oliver", "Dolin", , "odolin@darkpeakanalytics.com", role = c("aut")),
     person("Dark Peak Analytics Ltd", role = c("cph", "fnd"))
   )
-Description: The 'bibby' package provides functions to help take input tables that 
-              contain BibTeX entries and convert them into a format that can be used in R, RMarkdown & Quarto
+Description: The 'bibby' package provides functions to help take BibTeX entries 
+              and convert them into a format that can be used in R, RMarkdown & Quarto
               so that automated reports can be generated with the references included.
 License: GPL (>= 3)
 Encoding: UTF-8

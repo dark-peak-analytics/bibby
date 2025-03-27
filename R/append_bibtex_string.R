@@ -44,7 +44,7 @@ append_bibtex_entry <- function(bibtex_entry,
     return(c(existing_content, " ", bibtex_entry))
   } else {
     # if it does exist, return the existing content and print a message
-    if(verbose) message("BibTeX tag ", bib_tag, " already exists in .bib file.")
+    if(verbose) message("BibTeX tag ", bib_tag, " already exists in .bib file. Using existing entry")
     return(existing_content)
   }
 }

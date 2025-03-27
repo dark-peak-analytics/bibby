@@ -8,7 +8,19 @@ test_that("Test writing to file works", {
       "[@gmailr]",
       "[@baio2017bceaweb2]",
       "[@hart2020r]",
-      "Assumption"
+      "(Assumption)"
+    )
+
+  v_expectations_long <-
+    c(
+      "@smith2020making",
+      "@tordrup2022global",
+      "@xie2015",
+      "@baio2017bceaweb",
+      "@gmailr",
+      "@baio2017bceaweb2",
+      "@hart2020r",
+      "(Assumption)"
     )
 
   v_expectations_tag <-
@@ -20,7 +32,7 @@ test_that("Test writing to file works", {
       "gmailr",
       "baio2017bceaweb2",
       "hart2020r",
-      "Assumption"
+      "(Assumption)"
     )
 
   # create a temporary directory
@@ -37,6 +49,11 @@ test_that("Test writing to file works", {
 
   update_bib_file_from_vector(path = path,
                               v_bibtex_entries = v_example_refs,
+                              output_type = "markdown_long") |>
+    expect_equal(expected = v_expectations_long)
+
+  update_bib_file_from_vector(path = path,
+                              v_bibtex_entries = v_example_refs,
                               output_type = "tag") |>
     expect_equal(v_expectations_tag)
 
@@ -50,7 +67,7 @@ test_that("Test writing to file works", {
 
   # check that the file contains the expected strings
   lapply(
-    X = v_expectations_tag[v_expectations_tag != "Assumption"],
+    X = v_expectations_tag[v_expectations_tag != "(Assumption)"],
     FUN = function(x) {
       grepl(x = v_bibfilestrings,
             pattern = x) |> any()

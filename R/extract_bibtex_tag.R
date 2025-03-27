@@ -32,7 +32,7 @@ extract_bibtex_tag <- function(bibtex_entry,
   # Check the bibtex_entry argument contains an @, an opening and closing bracket
   # and a tag
   if (!grepl(pattern = "^@.*?\\{([^,]+),.*", x = bibtex_entry))
-    return(bibtex_entry)
+    return(paste0("(", bibtex_entry, ")"))
 
   # check the output argument provided.
   output <- match.arg(output)

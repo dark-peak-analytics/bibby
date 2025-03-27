@@ -30,6 +30,6 @@ test_that("extract_bibtex_tag", {
   expect_equal(object = v_bib_tag,
                expected = c("[@smith2020making]", "[@tordrup2022global]", "[@xie2015]",
                    "[@baio2017bceaweb]",   "[@gmailr]", "[@baio2017bceaweb2]",
-                   "[@hart2020r]",  "Assumption" ))
+                   "[@hart2020r]",  "(Assumption)" ))
 
 })
