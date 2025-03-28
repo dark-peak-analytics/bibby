@@ -2,7 +2,7 @@
 
 <div class="logos">
 
-<img src="https://github.com/user-attachments/assets/0fd4be1b-8dd3-4625-9c3f-98b407394107" width="120px" align="right">
+<img src="https://github.com/user-attachments/assets/60ce1afb-efaa-4fa7-befe-fffeeb2fbf3d" width="120px" align="right">
 
 </div>
 
