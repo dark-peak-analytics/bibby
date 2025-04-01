@@ -33,3 +33,15 @@ test_that("extract_bibtex_tag", {
                    "[@hart2020r]",  "(Assumption)" ))
 
 })
+
+
+
+
+test_that("extract_bibtex_tag works with multiple bibtex entries in the string", {
+
+  multiple_bibtex_entries <- extract_bibtex_tag(bibtex_entry = paste0(v_example_refs[1:3], collapse = "\n"),
+                                                output = "markdown_short")
+
+  expect_true(multiple_bibtex_entries == "[@smith2020making; tordrup2022global; xie2015]")
+
+})
