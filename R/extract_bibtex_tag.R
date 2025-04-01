@@ -26,6 +26,13 @@
 #' }", "tag"
 #'   )
 #'
+#' extract_bibtex_tag(bibtex_entry = paste0(v_example_refs[1:3], collapse = "\n"),
+#'                    output = "markdown_short")
+#'
+#' extract_bibtex_tag(bibtex_entry = paste0(v_example_refs[1:3], collapse = "\n"),
+#'                    output = "markdown_long")
+#'
+#'
 #' extract_bibtex_tag("Assumption")
 extract_bibtex_tag <- function(bibtex_entry,
                                output = c("tag", "markdown_short", "markdown_long")) {
@@ -41,12 +48,17 @@ extract_bibtex_tag <- function(bibtex_entry,
   bibtex_entry <- gsub("\\s+", " ", bibtex_entry)
 
   # Extract the tag using a more flexible regex
-  tag <- sub("^@.*?\\{([^,]+),.*", "\\1", bibtex_entry)
+  tag <- regmatches(x = bibtex_entry,
+                    m = gregexpr("@.*?\\{([^,]+),",
+                                 text = bibtex_entry)) |>
+    unlist() |>
+    gsub(pattern = "@.*?\\{([^,]+),",
+         replacement = "\\1")
 
   if (output == "tag")
     return(tag)
   if (output == "markdown_short")
-    return(paste0("[@", tag, "]"))
+    return(paste0("[@", paste0(tag, collapse = "; "), "]"))
   if (output == "markdown_long")
-    return(paste0("@", tag))
+    return(paste0("@", tag, collapse = " & "))
 }
