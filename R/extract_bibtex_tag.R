@@ -58,7 +58,7 @@ extract_bibtex_tag <- function(bibtex_entry,
   if (output == "tag")
     return(tag)
   if (output == "markdown_short")
-    return(paste0("[@", paste0(tag, collapse = "; "), "]"))
+    return(paste0("[@", paste0(tag, collapse = "; @"), "]"))
   if (output == "markdown_long")
     return(paste0("@", tag, collapse = " & "))
 }
