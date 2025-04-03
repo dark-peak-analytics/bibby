@@ -18,8 +18,6 @@
 #' verbose = TRUE
 #' )
 #' }
-#'
-#'
 update_bib_file_from_vector <- function(
     path,
     v_bibtex_entries,
