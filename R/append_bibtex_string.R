@@ -37,14 +37,31 @@ append_bibtex_entry <- function(bibtex_entry,
   )
 
   # If the tag does not exist, append the bibtex string
-  if (!bib_tag_exists){
-    if(!grepl(pattern = "^@.*?\\{([^,]+),.*", x = bibtex_entry))
+  if (all(!bib_tag_exists, !is.na(bib_tag))){
+    if(!grepl(pattern = "^@.*?\\{([^,]+),.*", x = bibtex_entry)) {
       bibtex_entry <- NULL
+
+      return(existing_content)
+    }
+
     # Append new entry only if it does not already exist
-    return(c(existing_content, " ", bibtex_entry))
+    if(any(
+      isTRUE(existing_content == ""),
+      isTRUE(existing_content == " "),
+      isTRUE(length(existing_content) == 0))) {
+
+      return(bibtex_entry)
+    } else {
+
+      return(c(existing_content, " ", bibtex_entry))
+    }
+  } else if (is.na(bib_tag)) {
+
+    return(existing_content)
   } else {
     # if it does exist, return the existing content and print a message
     if(verbose) message("BibTeX tag ", bib_tag, " already exists in .bib file. Using existing entry")
+
     return(existing_content)
   }
 }
