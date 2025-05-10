@@ -37,5 +37,12 @@ year={2020}
 }", "tag"
   )
 
+extract_bibtex_tag(bibtex_entry = paste0(v_example_refs[1:3], collapse = "\n"),
+                   output = "markdown_short")
+
+extract_bibtex_tag(bibtex_entry = paste0(v_example_refs[1:3], collapse = "\n"),
+                   output = "markdown_long")
+
+
 extract_bibtex_tag("Assumption")
 }
