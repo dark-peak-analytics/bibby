@@ -59,7 +59,8 @@ library(bibby)
 ## Use
 
 Hopefully simple to use. Just specify the bibtex entry and the output type required.
-For example...
+
+For example the code below should return the bibtex tag for the entry ("@smith2020making").
 
 ``` r
 
@@ -73,7 +74,11 @@ extract_bibtex_tag(
                             year={2020}}",
   output = "markdown_long")
 
+# Returns:
+# "@smith2020making"
+
 ```
+
 
 If you have a list of bibtex entries, you can then use the `update_bib_file_from_vector`
 function to update a .bib file with the new entries. For example the code below
@@ -85,10 +90,16 @@ The function also returns the bibtex tags of all entries for use in other functi
 ``` r
 
 update_bib_file_from_vector(path = "bibby_refs.bib",
-                            v_bibtex_entries = v_example_refs,
+                            v_bibtex_entries = bibby::v_example_refs,
                             verbose = TRUE, 
                             output_type = "markdown_short"
                             )
+                            
+# Returns:
+# [1] "[@smith2020making]"   "[@tordrup2022global]" "[@xie2015]"           "[@baio2017bceaweb]"   "[@gmailr]"           
+# [6] "[@baio2017bceaweb2]"  "[@hart2020r]"         "(Assumption)"  
+# And fills the file `bibby_refs.bib` with the original BiBTeX.
+
                             
 ```
 
