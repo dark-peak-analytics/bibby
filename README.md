@@ -12,11 +12,37 @@
 
 <!-- badges: end -->
 
-## Purpose
+## Background
 
-This R package is designed to work with bibtex in automated reporting - constructing .bib files from 
-dataframes of references, and extracting references from .bib files into dataframes.
+A common problem when working with automated or semi-automated reports is the 
+need to manage references alongside input parameters and other data. For example
+if I have a model that has costs from Williams et al. (2020) and I want to change 
+the cost of that intervention to be from Jameson et al. (2024) then I would want 
+the value to be updated in the model, but also the reference to be updated in the report.
 
+This package is designed to help with that problem, by allowing users to provide
+references in a data frame (likely read in from Excel). This means that users
+who are not R programmers can easily update parameter values and references in 
+the input tables and re-run the R code (either automated or semi-automated) to
+update the report with the new values and references.
+
+## Overview
+
+The `bibby` package provides functions to work with bibtex entries in R. 
+
+It does two things:
+1) The BiBTeX entries provided in tables are replaced with tags suitable for .Rmd.
+2) The bibtex entries are written to a .bib file which is used by the .Rmd
+   document to generate the bibliography.
+
+There is no need to manually edit the .bib file, as the package will
+automatically update the .bib file with the new entries. This means that users
+can easily update the references in their input tables and re-run the R code to
+update the report with the new values and references.
+
+This process can be embedded into automated workflows, shiny or with 
+databases such as DuckDB or SQLite. The package is designed to be simple to use
+and flexible, allowing users to easily manage their references in R.
 
 ## Installation
 
@@ -66,7 +92,9 @@ update_bib_file_from_vector(path = "bibby_refs.bib",
                             
 ```
 
-
+This is a beta version of the package, so please report any issues or suggestions.
+We are using this on several client projects and it is working well, but we are
+always looking for ways to improve the package and make it more useful for users.
 
 
 ## Get in contact
