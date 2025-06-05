@@ -35,6 +35,4 @@ v_bibtex_entries = v_example_refs,
 verbose = TRUE
 )
 }
-
-
 }
