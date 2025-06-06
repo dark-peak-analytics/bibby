@@ -1,8 +1,8 @@
 # bibby
 
-::: logos
+
 <img src="https://github.com/user-attachments/assets/60ce1afb-efaa-4fa7-befe-fffeeb2fbf3d" width="120px" align="right"/>
-:::
+
 
 <!-- badges: start -->
 
